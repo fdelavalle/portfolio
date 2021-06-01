@@ -40,4 +40,5 @@ window.addEventListener("resize", () => {
 
 
 
+
 navSlide();
