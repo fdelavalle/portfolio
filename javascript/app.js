@@ -26,19 +26,41 @@ function navSlide() {
     
 }
 
-let resizeTimer;
-window.addEventListener("resize", () => {
-    document.body.classList.add("resize-animation-stopper");
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        document.body.classList.remove("resize-animation-stopper");
-    }, 400);
-});
+const cancelAnimation =  () => {
+    let resizeTimer; 
+    window.addEventListener("resize", () => {
+        document.body.classList.add("resize-animation-stopper");
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            document.body.classList.remove("resize-animation-stopper");
+        }, 400);
+    });
+};
+
+
+const navbarShowHide = () => {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    let nav = document.querySelector("nav");
+    if (prevScrollpos > currentScrollPos) {
+        nav.style.top = "0";
+       
+    } else {
+        nav.style.top = "-200px";
+    }
+    prevScrollpos = currentScrollPos;   
+    }
+};//document.querySelector("nav").style.top = "-200px";
 
 
 
 
 
+const app = () => {
+    navSlide();
+    cancelAnimation();
+    navbarShowHide();
+}
 
-
-navSlide();
+app();
