@@ -30,14 +30,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 8vh;
+    max-height: 6vh;
     background-color: #091a2f;
     font-family: "Poppins", sans-serif;
     padding: 3rem 3rem;
     font-size: 13px;
     font-weight:normal;
     transition: all 0.5s;
+    
 }
+
 
 .nav-links {
  
@@ -262,19 +264,61 @@ nav {
     margin-left: -7px;
 }
 
-
-
-
-
 .mail:hover, .icon1:hover, .icon2:hover{
     cursor: pointer;
     color:#64ffda;
     transform: translateY(-3px);
 }
 
+/* About me */
+
+.about{
+    margin-left: 28%;
+    width: 33%;
+    color: #8792b0;
+  
+}
 
 
 
+.section_title_container{
+    color: #ccd6f6;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.section_title_container h1 span{
+    color: #64ffda;
+    font-family: "Roboto Mono";
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.section_line{
+    background-color: #233554;
+    width: 400px;
+    height: 1px;
+    margin-left: 20px;
+}
+
+
+.padding-right{
+    padding-right: 50px;
+    
+}
+
+.about table{
+    font-weight: 400;
+    font-family: "Roboto Mono";
+    font-size: 13px;
+}
+
+.my_chevron{
+    color: #64ffda;
+    font-size: 10px;
+}
 
 
 

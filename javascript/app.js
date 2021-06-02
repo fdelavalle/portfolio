@@ -3,9 +3,6 @@ function navSlide() {
     const nav = document.querySelector(".nav-links");
     const navLinks = document.querySelectorAll(".nav-links li");
     
-    
-    
-    
     burger.addEventListener("click", () => {
         //Toggle Nav
         nav.classList.toggle("nav-active");
@@ -39,19 +36,30 @@ const cancelAnimation =  () => {
 
 
 const navbarShowHide = () => {
+    const navLinks = document.querySelectorAll(".nav-links li");
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
     let nav = document.querySelector("nav");
+    if(window.pageYOffset == 0.0){
+        nav.style.opacity = 1;
+        nav.style.boxShadow = "none";
+        nav.style.filter = "none";
+        
+        
+    }
+    
     if (prevScrollpos > currentScrollPos) {
         nav.style.top = "0";
        
     } else {
-        nav.style.top = "-200px";
-    }
+        nav.style.top = "-15vh";
+        nav.style.boxShadow =  "0px 3px 15px #09102A";
+        nav.style.opacity = 0.96;
+     } 
     prevScrollpos = currentScrollPos;   
     }
-};//document.querySelector("nav").style.top = "-200px";
+};
 
 
 
