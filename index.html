@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <title>Facus portfolio</title>
 </head>
-<body>
+<body class="hide_scrollbars">
+    <!-- Preloader animation -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
     <!-- SIDE PARTS -->
     <section class="left-side">
         <ul class="left-content">
@@ -29,20 +33,15 @@
     <!-- NAVBAR -->
     <header>
         <nav>
+            <div class="logo"></div>
 
-         
-            <div class="logo">
-                <h1>LOGO</h1>
+            <ul class="nav-links" id="nav-links">
                 
-            </div>
-
-            <ul class="nav-links">
-                
-                 <li><a href="#home"><span>01.</span>Home</a></li>
-                 <li><a href="#"><span>02.</span>About</a></li>
-                 <li><a href="#"><span>03.</span>Projects</a></li>
-                 <li><a href="#"><span>04.</span>Contact</a></li>
-                 <li class="last"><a href="#" class="button smaller-button">Resume</a></li>    
+                 <li id="a_home"><a href="#home"><span>01.</span>Home</a></li>
+                 <li id="a_about"><a href="#"><span>02.</span>About</a></li>
+                 <li id="a_projects"><a href="#"><span>03.</span>Projects</a></li>
+                 <li id="a_contact"><a href="#"><span>04.</span>Contact</a></li>
+                 <li id="a_resume"><a href="#" class="button smaller-button">Resume</a></li>    
                    
             </ul>
             <div class="burger">
@@ -56,14 +55,16 @@
     <section class="home" id="home">
         <div class="home_container">
             <div class="home_data" >
-                <span class="home_greeting">Hi, my name is </span>
-                <h1 class="home_name">Facundo Delavalle.</h1>
-                <span class="home_profession">I build things for the web.</span>
-                <p class="home_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                <p class="home_greeting animation">Hi, my name is </p>
+                <h1 class="home_name animation">Facundo Delavalle.</h1>
+                <h2 class="home_profession animation">I build things for the web.</h2>
+                <p class="home_description animation">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                      Minus quo blanditiis dolorem temporibus expedita ut maxime voluptatem reprehenderit, 
                      autem exercitationem dolore minima enim laboriosam quasi dolores ea! Omnis voluptas sit 
                      laboriosam magni nisi quas, eveniet architecto? Atque maxime</p>
-                <a download="" href="www.facebook.com" class="button home_button inline-block transition">Get in Touch</a>   
+                <div class="button_wrapper animation">
+                 <a download="" href="www.facebook.com" class="button home_button inline-block">Get in Touch</a> 
+                </div>        
             </div>
         </div>
     </section>
@@ -93,6 +94,8 @@
                 <td><i class="fas fa-chevron-right my_chevron"></i> Kiky</td>
             </tr>
         </table>
+        
+        
     </section>
    <script src="./javascript/app.js"></script>
 </body>

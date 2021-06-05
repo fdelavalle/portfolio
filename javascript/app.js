@@ -2,16 +2,10 @@ function navSlide() {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
     const navLinks = document.querySelectorAll(".nav-links li");
-    const faders = document.querySelectorAll(".fade_in");
-    
-
+   
     burger.addEventListener("click", () => {
-        //Toggle Nav
         nav.classList.toggle("nav-active");
         nav.classList.toggle("transition");
-        
-        
-        //Animate Links
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = ""
@@ -19,7 +13,6 @@ function navSlide() {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
             }
         });
-        //Burger Animation
         burger.classList.toggle("toggle");
     });
     
@@ -37,8 +30,9 @@ const cancelAnimation =  () => {
 };
 
 
+
+
 const navbarShowHide = () => {
-    const navLinks = document.querySelectorAll(".nav-links li");
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
@@ -46,9 +40,7 @@ const navbarShowHide = () => {
     if(window.pageYOffset == 0.0){
         nav.style.opacity = 1;
         nav.style.boxShadow = "none";
-        nav.style.filter = "none";
-        
-        
+        nav.style.filter = "none";    
     }
     
     if (prevScrollpos > currentScrollPos) {
@@ -85,16 +77,110 @@ const appearOnScroll = new IntersectionObserver
 const faders = document.querySelectorAll(".fade_in")
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
-})
+    }
+);
+
+
+
+
+const preloadAnimation = () => {
+    const body = document.body;
+    const preloadWrapper = document.querySelector('.loader-wrapper');
+    const preloadInner =  document.querySelector('.loader');
+    setTimeout(function(){
+        body.classList.toggle("hide_scrollbars")
+        preloadWrapper.style.opacity = 0;
+        preloadWrapper.style.transform = "translateX(1000px)";
+        preloadWrapper.style.display = "none";
+        }, 3000 
+     );
+
+    setTimeout(function(){
+        preloadInner.style.opacity = 0;
+        
+        }, 2800 
+     );
+};
+
+const showLogo = () => {
+    const logo = document.querySelector('.logo');
+    setTimeout(function(){
+        logo.style.transform = "translateY(0)";
+        logo.style.opacity = 1;
+    }, 3300
+    );
+};
+
+
+const showNavlinks = () =>{
+    const navlinkItems = document.getElementById("nav-links").children;
+    let time = 3400;
+    for(let item of navlinkItems) {
+        setTimeout(function(){
+           item.style.transform = "translateY(0)";
+           item.style.opacity = 1;
+        }, time);
+        time += 100;
+    };
+};
+
+showHome = () => {
+    const homeItems = document.querySelector(".home_data").children;
+    let time = 4000;
+    for (const item of homeItems) {
+        setTimeout(function(){
+            item.classList.remove("animation");
+         }, time);
+         time += 100;
+        
+    };
+};
+
+showBars = () => {
+    const leftBar = document.querySelector(".left-side");
+    const rightBar = document.querySelector(".right-side");
+    setTimeout(function(){
+        leftBar.style.opacity = 1;
+        rightBar.style.opacity = 1;
+    }, 4700);
+};
+
+const showElements = () => {
+    showLogo();
+    showNavlinks();
+    showHome();
+    showBars();
+    
+}
+
+
+
+const reloadPosition = () => {
+    window.onbeforeunload = function () {
+    document.body.style.background = "#020c1b";
+    const children = document.body.children;
+    for (const child of children) {
+        child.style.display = "none";
+        };
+        window.scrollTo(0, 0);  
+        };
+    };
 
 
 
 
 
 const app = () => {
+    reloadPosition();
     navSlide();
+    preloadAnimation();
     cancelAnimation();
     navbarShowHide();
-}
+    showElements();
+   
+};
+
+
 
 app();
+
