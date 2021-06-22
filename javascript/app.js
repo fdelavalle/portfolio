@@ -142,7 +142,7 @@ showBars = () => {
     setTimeout(function(){
         leftBar.style.opacity = 1;
         rightBar.style.opacity = 1;
-    }, 4700);
+    }, 4800);
 };
 
 const showElements = () => {

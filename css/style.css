@@ -125,7 +125,7 @@ nav {
 .nav-links {
     display: flex;
     justify-content: space-between;
-    width: 35rem;
+    width: 30rem;
     
     
 }
@@ -404,14 +404,10 @@ nav {
   }
   
 
-
-
-
-
-
-
-
-
+.projects{
+    margin-left: 28%;
+    margin-top: 20vh;
+}
 
 
 
